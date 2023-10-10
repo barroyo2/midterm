@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Midterm</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.9798936,-87.7198237],
+              zoom: 17
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 20,
+               minZoom: 10
+            }).addTo(map);
+
+
+           var marker1 = L.marker([41.98056,-87.71704]).addTo(map);
+           var marker2 = L.marker([41.98042,-87.71915]).addTo(map);
+           var marker3 = L.marker([41.97942,-87.71972]).addTo(map);
+           var marker4 = L.marker([41.97783,-87.71764]).addTo(map);
+           var marker5 = L.marker([41.98230,-87.71855]).addTo(map);
+           var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/NEIU_Sci.jpg" alt="BBH" width="250">';
+           var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/NEIUlibrary.jpg" alt="Library" width="250">';
+           var pic3 = '<img src="https://th.bing.com/th/id/R.989b7b2f666922e485387022a2af89a3?rik=bK9h91gvLrHW4g&riu=http%3a%2f%2fcollegiatehousing.org%2fwp-content%2fuploads%2f2016%2f09%2fProject_NEIU.jpg&ehk=0Rgh9psd%2fWjZ8FlJ%2b%2bwQ%2bzP8vxQ31yulmfKP05oBs0Q%3d&risl=&pid=ImgRaw&r=0" alt="Dorm The Nest" width="250">';
+           var pic4 = '<img src="https://th.bing.com/th/id/OIP.2v4YC6Jh438GSsNqUZb92QAAAA?pid=ImgDet&w=100&h=100&c=7&dpr=2" alt="Gym" width="250">';
+           var pic5 = '<img src="https://ir.4sqi.net/img/general/original/5bQlJ1SME_gz1iC1-J4XStAuuVgdkBOixP99vd3c_mQ.jpg" alt="LWH" width="250">';
+
+
+
+
+           marker1.bindPopup('<p style="color:blue; font-weight:bold"> The science builing AKA BBH in which majority of the physical science classes are taught </p>' + pic1);
+           marker2.bindPopup('<p style="color:blue; font-weight:bold"> The libary is a great place to study and ask for tutor for help </p>' + pic2);
+           marker3.bindPopup('<p style="color:blue; font-weight:bold"> The Dorm Aka The Nest is where you will reside if you choose move in </p>' + pic3);
+          marker4.bindPopup('<p style="color:blue; font-weight:bold"> The gym is a great destresser for final week or if you want to  maintanin an active life style its a couple miniute walk from the dorms</p>' + pic4);
+           marker5.bindPopup('<p style="color:blue; font-weight:bold"> Lech Walesa Hall is where majority of the social classes will be in  </p>' + pic5);
+
+        </script>
+   </body>
+</html>
